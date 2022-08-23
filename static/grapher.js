@@ -140,6 +140,7 @@ canvas.onmousedown = (e) => {
 
     if($y > 2  || $y <-2) {
         alert("Y must be from -2 to 2")
+        return
     }
     form.submit()
 }

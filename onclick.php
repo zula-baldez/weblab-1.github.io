@@ -55,7 +55,7 @@
             } else {
                 array_push($_SESSION['attempts'], $attempt);
             }
-            header('Location: ./web_1.php');
+            header('Location: ./index.php');
 
     }
     
