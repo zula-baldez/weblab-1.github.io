@@ -10,11 +10,21 @@
 
         
     } else {
+            $x = strval(str_replace(',', '.', $_GET['x']));
 
-            $x = floatval($_GET['x']);
-            $y = floatval($_GET['y']);
+            $y = strval(str_replace(',', '.', $_GET['y']));
 
-            $r = floatval($_GET['r']);
+            $r = strval(str_replace(',', '.', $_GET['r']));
+            if(!is_numeric($x) || !is_numeric($y) || !is_numeric($r)) {
+                echo "Please put numbers into query";
+                http_response_code(400);
+                return;
+            }
+            if($r <= 0 || $r > 5 || $y < -2 || $y > 2 || $x <= -5 || $x > 5) {
+                echo "Please put correct values";
+                http_response_code(400);
+                return;
+            }
             $hit = false;
             if(($x >= 0) && ($x <= $r / 2) && ($y >=0) && ($y <= $r)) {
                 $hit = true;

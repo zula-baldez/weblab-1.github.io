@@ -24,7 +24,7 @@ const submitButton = document.getElementById("form-submit")
 
 
         let x = parseFloat(xInput.value);
-        if(Number.isNaN(x) || x < -5 || x > 5) {
+        if(Number.isNaN(x) || x <= -5 || x >= 5) {
             warning(xElementWarning, "X must be from -5 to 5")
         } else {
             hideWarning(xElementWarning, "")
